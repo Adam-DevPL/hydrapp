@@ -28,6 +28,8 @@ if (localStorage.getItem("key")) {
     lastSavedDay.unshift({ key: currentDay, glasses: 0 });
     glassesOfWater.innerHTML = glasses;
   }
+} else {
+  saveInLS(currentDay, glasses);
 }
 
 buttonAdd.addEventListener("click", () => {
