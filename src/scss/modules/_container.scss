@@ -1,0 +1,20 @@
+.container {
+    position: relative;
+    min-width: 280px;
+    min-height: 280px;
+    margin-bottom: 48px;
+    &__image {
+      position: absolute;
+    }
+    &__number {
+      position: absolute;
+      margin: 0;
+      top: 114px;
+      bottom: 68px;
+      left: 96px;
+      right: 96px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
