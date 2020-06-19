@@ -13,12 +13,12 @@ const buttonAdd = document.querySelector(".button-add--js");
 const buttonDelete = document.querySelector(".button-delete--js");
 
 
-const key = new Date().toISOString().slice(0, 10);
+const key = new Date();
 var lastSavedDay = [];
 
-console.log(key);
+var currentDay = key.toLocaleString('pl-PL').slice(0, 10)
 
-var currentDay = key;
+console.log(currentDay);
 
 var glasses = 0;
 
