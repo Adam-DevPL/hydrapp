@@ -12,7 +12,10 @@ const glassesOfWater = document.querySelector(".number--js");
 const buttonAdd = document.querySelector(".button-add--js");
 const buttonDelete = document.querySelector(".button-delete--js");
 
+
 const key = new Date().toISOString().slice(0, 10);
+
+console.log(key);
 
 var currentDay = key;
 
@@ -35,7 +38,7 @@ if (localStorage.getItem("key")) {
 buttonAdd.addEventListener("click", () => {
   glasses++;
   glassesOfWater.innerHTML = glasses;
-  saveInLS(currentDay, glasses);
+  saveInLS(currentDay, glasses, lastSavedDay);
 });
 
 buttonDelete.addEventListener("click", () => {
@@ -43,11 +46,21 @@ buttonDelete.addEventListener("click", () => {
     glasses--;
   }
   glassesOfWater.innerHTML = glasses;
-  saveInLS(currentDay, glasses);
+  saveInLS(currentDay, glasses, lastSavedDay);
 });
 
-function saveInLS(keyParam, glassesParam) {
-  var array = [];
+if (window.performance) {
+  console.info("window.performance work's fine on this browser");
+}
+if (performance.navigation.type == 1) {
+  console.info("This page is reloaded");
+} else {
+  console.info("This page is not reloaded");
+}
+
+
+
+function saveInLS(keyParam, glassesParam, array) {
   array[0] = { key: keyParam, glasses: glassesParam };
   localStorage.setItem("key", JSON.stringify(array));
 }
