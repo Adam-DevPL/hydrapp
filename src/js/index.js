@@ -14,6 +14,7 @@ const buttonDelete = document.querySelector(".button-delete--js");
 
 
 const key = new Date().toISOString().slice(0, 10);
+var lastSavedDay = [];
 
 console.log(key);
 
@@ -22,7 +23,7 @@ var currentDay = key;
 var glasses = 0;
 
 if (localStorage.getItem("key")) {
-  var lastSavedDay = JSON.parse(localStorage.getItem("key"));
+  lastSavedDay = JSON.parse(localStorage.getItem("key"));
   console.log(lastSavedDay[0].key);
   if (currentDay == lastSavedDay[0].key) {
     glasses = lastSavedDay[0].glasses;
@@ -32,7 +33,7 @@ if (localStorage.getItem("key")) {
     glassesOfWater.innerHTML = glasses;
   }
 } else {
-  saveInLS(currentDay, glasses);
+  saveInLS(currentDay, glasses, lastSavedDay);
 }
 
 buttonAdd.addEventListener("click", () => {
