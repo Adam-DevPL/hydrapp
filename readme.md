@@ -1,7 +1,7 @@
 ![cover](gh/readme-image.png)
 
-# Hydrapp - application for checking status of drunk glasses of water.
-> My simple portfolio website.
+# Hydrapp.
+> My simple app for register drunk glasses of water.
 
 ## Table of contents
 * [General info](#general-info)
