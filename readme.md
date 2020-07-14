@@ -1,4 +1,4 @@
-![cover](gh/readme-image.png)
+![cover](public/hydrapp.png)
 
 # Hydrapp.
 > My simple app for register drunk glasses of water.
